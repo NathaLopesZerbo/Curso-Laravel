@@ -1,4 +1,4 @@
-<h1>Nova Dúvida</h1>
+<h1>Nova Dúvida- Teste</h1>
 
 @if($errors->any())
     @foreach ($errors->all() as $error)
