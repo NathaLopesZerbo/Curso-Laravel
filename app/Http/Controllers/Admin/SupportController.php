@@ -16,7 +16,10 @@ class SupportController extends Controller
     }
 
     public function show(string | int $id) {
-        dd($id);
+        if(!$support = Support::find($id)){
+            return redirect()->back();
+        }
+        dd($support->subject);
     }
 
     public function create(){
