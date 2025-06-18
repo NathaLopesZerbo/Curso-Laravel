@@ -34,10 +34,7 @@ class SupportController extends Controller
     }
 
     public function store(StoreUpdateSupport $request, Support $support){
-        $data = $request->validated();
-        $data['status'] = 'a';
-
-        $support->create($data);
+        $this->service->new(new C)
         return redirect()->route('supports.index');
     }
 
