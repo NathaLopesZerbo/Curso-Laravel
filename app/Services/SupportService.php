@@ -3,6 +3,7 @@
     namespace App\Service;
 
 use App\DTO\CreateSupportDTO;
+use App\DTO\UpdateSupportDTO;
 use stdClass;
 
     class SupportService{
@@ -25,18 +26,8 @@ use stdClass;
             return $this->repository->new($dto);
         }
 
-          public function update(
-                string $id,
-                string $subject,
-                string $status,
-                string $body,
-            ): stdClass | null {
-            return $this->repository->update(
-                $id,
-                $subject,
-                $status,
-                $body,
-            );
+          public function update(UpdateSupportDTO $dto): stdClass | null {
+            return $this->repository->update($dto);
         }
 
         public function delete(string $id): void{
