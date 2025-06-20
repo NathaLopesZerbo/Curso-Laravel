@@ -16,7 +16,6 @@ class SupportEloquentORM implements SupportRepositoryInterface
     ){}
 
     public function getAll(string $filter = null): array{
-        dd($this->model);
         return $this->model
                         ->where(function ($query) use ($filter){
                             if($filter){
@@ -24,7 +23,7 @@ class SupportEloquentORM implements SupportRepositoryInterface
                                 $query->orWhere('body', 'like', "%{$filter}%");
                             }
                         })
-                        ->all()
+                        ->get()
                         ->toArray();
     }
 
