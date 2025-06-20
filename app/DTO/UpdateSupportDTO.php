@@ -6,6 +6,7 @@ use App\Http\Requests\StoreUpdateSupport;
 
 class UpdateSupportDTO{
     public function __construct(
+        public string $id,
         public string $subject,
         public string $status,
         public string $body,

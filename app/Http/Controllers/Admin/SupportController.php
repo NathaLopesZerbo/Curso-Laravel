@@ -52,7 +52,7 @@ class SupportController extends Controller
         return view('admin/supports.edit', compact('support'));
     }
 
-    public function update( StoreUpdateSupport $request,Support $support, string $id){
+    public function update(StoreUpdateSupport $request,Support $support, string $id){
 
         $support = $this->service->update(
             UpdateSupportDTO::makeFromRequest($request)
